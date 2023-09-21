@@ -1,0 +1,82 @@
+##Explicacion:
+
+"""
+##EXPLICACION**
+es una aplicacion de ventas, la cual como base tiene una "base de datos" que cuenta con variables globales y listas con diccionarios y un menu de LOGIN, el mismo tiene 3 opciones:
+1.Entrar modo ADMINISTRADOS
+2.Entrar modo USUARIO/COMPRADOR
+3.Error al ingresar clave/contraseña
+
+1) el administrador cuenta con 4 funciones principales
+1.1)VISUALIZAR LOS PRODUCTOS CARGADOS HASTA EL MOMENTO(BASE DE DATOS)
+1.2)MODIFICAR STOCK DE ALGUN PRODUCTO CARGADO
+1.3)MODIFICAR PRECIO DE ALGUN PRODUCTO CARGADO
+1.4)CARGAR NUEVOS PRODUCTOS AL STOCK.
+1.5)VOLVER AL MENU DE LOGIN
+
+2) el usuario/comprador cuenta con 3 funciones principales
+2.1)VISUALIZAR LOS PRODUCTOS CARGADOS HASTA EL MOMENTO(BASE DE DATOS)
+2.2)REALIZAR UNA COMPRA(NECESITA INDICAR EL ID DEL PRODUCTO QUE QUIERE COMPRAR)
+2.2.1)MENU DE PAGO: CONTIENE 4 OPCIONES:
+                    1)DEBITO
+                    2)T.EFECTIVO 10%OFF
+                    3)T.CREDITO 10% RECARGO
+                    4)CANCELAR PAGO Y VOLVER AL MENU DE USUARIO/COMPRADOR
+2.3) VOLVER AL MENU DE LOGIN
+
+"""
+##PAUTAS DEL EJERCICIO
+"""
+##PAUTAS**
+Ejercicio 4.6 (Programa de ventas)
+El programa debe:
+
+-Simular un programa que venda 3 productos
+
+1-El menu debe mostrar los productos a comprar.
+2-Luego se debe contar con un menu de si se pagara en efectivo o tarjeta credito o debito
+
+* Contar con 7 funciones:
+1-Ver menu de productos💚
+2-Pagar con tarjeta credito (Se debe cobrar 10% mas y se debe descontar el stock)
+3-Pagar con tarjeta debito (se debe descontar el stock)
+4-Pagar con efectivo (Se debe cobrar 10% menos y se debe descontar el stock)
+5-consultar productos y stock💚
+6-agregar stock a los productos💚
+7-cambiar el precio a los productos💚
+
+**Gestionar posibles errores
+**Estructurar el programa a criterio propio
+
+##posible estructura (guia):
+def main():
+    if login == "admin":
+        menuAdm()
+        base_datos() -->VOY A TENER UN MENU DONDE PUEDA: CONSULTAR STOCK💚-AGREGAR PRODUCTOS💚- MODIFICAR STOCK Y CAMBIAR PRECIO🧡
+        admin()
+    elif login == "user":
+        comprador() //MENU CON LOS PRODUCTOS - 
+                    //hacer que las compras se agregguen a un carrito y que se pueda visualizar
+                    //mostrar METODOS DE PAGO con la suma de los productos
+            --baseDatos()--> comprasUser
+    else:
+        print("Error")
+
+if __name__ == '__main__':
+    main()
+"""
+
+##errores pendientes:
+"""
+ULTIMOS ERROR:
+1) SI EN ADMIN AGREGO UN PRODUCTO Y ESE PRODUCTO LO COMPRO EN USER, "CANTIDAD" ME SIGUE SALIENDO AL MOMENTO DE VISUALIZAR LOS PRODUCTOS (ESTO NO PASA SIEMPRE, PASA CUANDO QUIERE :C)
+2)CUANDO ESTOY EN EL MENU DE COMPRA Y PONGO UNA CANTIDAD INSUFICIENTE, Y ME SALTA EL ERROR DE "STOCK INSUFICIENTE", EL STOCK SE ME DESCUENTA DE IGUAL FORMA.
+2.1) ADEMAS UNA VEZ QUE ME SALE EL ERROR DE "CANTIDAD INSUFICIENTE" YA NO ME DEJA VOLVER A COMPRAR, OSEA CADA VEZ QUE QUIERO COMPRAR ME APARECE QUE TODO ES STOCK INSUFICIENTE. 
+2.1 SOLUCION) CREO QUE SE DEBE A LOS TRY, COMO INTENTA HACE ALGO Y RETORNA AL LUGAR FUERA DE DONDE SE PRODUCE EL ERROR, ESTO YA QUE LA VARIABLE RESPUESTA ESTA FUERA DEL TRY Y EL CONDICIONAL SE ENCUENTRA DENTRO, CAPAZ QUE SE PUEDE SOLUCIONAR METIENDO LA VAR RESPUESTA
+
+
+POSIBLES AÑADIDOS:
+ALMACENAR TODAS LAS COMPRAS QUE HAGA EL USUARIO OSEA QUE APAREZCA UN CARRITO DONDE ESTEN TODAS LAS COMPRAS QUE HIZO Y EL TOTAL GASTADO.
+
+"""
+
